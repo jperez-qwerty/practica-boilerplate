@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- 1. Metas principales -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="MythicVault — Tienda especializada en accesorios premium para juegos de cartas coleccionables: fundas, tapetes y deck boxes de alta protección.">
+  <meta name="keywords" content="TCG, fundas cartas, deck box, playmats, tapetes, Magic The Gathering, Pokemon, Lorcana, Yu-Gi-Oh">
+  <meta name="author" content="MythicVault TCG">
+  <title>MythicVault — Accesorios Premium para TCG</title>
+
+  <!-- 2. Normalize.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+
+  <!-- 3. Google Fonts (Inter) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- 4. Iconos (Font Awesome 6) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- 5. Hoja de estilos -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Contenedor Maestro: Rango 1000px a 2000px -->
+  <div class="site-container">
+
+    <!-- Cabecera y Navegación -->
+    <header class="site-header">
+      <div class="header-inner">
+        <a href="#" class="brand-logo" aria-label="MythicVault Inicio">
+          <i class="fa-solid fa-shield-cat"></i> MythicVault
+        </a>
+        
+        <nav class="main-nav" aria-label="Menú principal">
+          <ul class="nav-list">
+            <li><a href="#inicio" class="nav-link active">Inicio</a></li>
+            <li><a href="#catalogo" class="nav-link">Accesorios</a></li>
+            <li><a href="#compatibilidad" class="nav-link">Formatos</a></li>
+            <li><a href="#contacto" class="nav-link">Contacto</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Contenedor de contenido estructurado con Flexbox -->
+    <div class="content-wrapper">
+      
+      <!-- Zona Principal (MAIN) -->
+      <main class="site-main" id="inicio">
+        
+        <section class="hero-section">
+          <h1>Protege tus mejores barajas.</h1>
+          <p>Materiales de calidad torneo diseñados para resistir miles de mezclas sin perder brillo ni tacto.</p>
+        </section>
+
+        <!-- Catálogo de productos en grid con Flexbox -->
+        <section class="products-grid" id="catalogo">
+          
+          <!-- Artículo 1: Fundas -->
+          <article class="card">
+            <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=600&auto=format&fit=crop&q=80" 
+                 alt="Paquete de fundas para cartas con textura mate y acabado texturizado" 
+                 class="card-img">
+            <div class="card-body">
+              <span class="card-tag">Fundas / Sleeves</span>
+              <h2 class="card-title">Aegis Matte Sleeves</h2>
+              <p class="card-text">Pack de 100 fundas de acabado mate antirreflejos. Textura trasera rugosa para un barajado suave y sin deslizamiento accidental.</p>
+              <a href="#" class="card-btn">Ver opciones de color <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </article>
+
+          <!-- Artículo 2: Tapete -->
+          <article class="card">
+            <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=600&auto=format&fit=crop&q=80" 
+                 alt="Tapete de juego de tela suave de neopreno con bordes cosidos reforzados" 
+                 class="card-img">
+            <div class="card-body">
+              <span class="card-tag">Tapetes / Playmats</span>
+              <h2 class="card-title">Chronos Playmat XL</h2>
+              <p class="card-text">Superficie de neopreno de 3 mm de grosor con base de caucho antideslizante y bordes cosidos para máxima durabilidad en torneos.</p>
+              <a href="#" class="card-btn">Explorar diseños <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </article>
+
+          <!-- Artículo 3: Deckbox -->
+          <article class="card">
+            <img src="https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?w=600&auto=format&fit=crop&q=80" 
+                 alt="Caja para mazo rígida de cuero sintético con cierre magnético cuádruple" 
+                 class="card-img">
+            <div class="card-body">
+              <span class="card-tag">Cajas / Deckbox</span>
+              <h2 class="card-title">Titan Vault 100+</h2>
+              <p class="card-text">Exterior en piel sintética impermeable con forro interior de microfibra y cierre magnético cuádruple. Capacidad para 100 cartas en doble funda.</p>
+              <a href="#" class="card-btn">Comprar ahora <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </article>
+
+        </section>
+      </main>
+
+      <!-- Barra lateral informativa (ASIDE) -->
+      <aside class="site-aside">
+        <div class="aside-widget">
+          <h3><i class="fa-solid fa-truck-fast"></i> Envíos para Torneos</h3>
+          <p>Entrega urgente en 24/48 horas para que tengas tus accesorios listos antes del fin de semana de competición.</p>
+        </div>
+        <div class="aside-widget">
+          <h3><i class="fa-solid fa-certificate"></i> Estándar de Torneo</h3>
+          <p>Todos nuestros productos son 100% legales y aptos para torneos oficiales de MTG, Pokémon Play! y Yu-Gi-Oh! TCG.</p>
+        </div>
+      </aside>
+
+    </div>
+
+    <!-- Pie de página (FOOTER) -->
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <p>© 2026 MythicVault TCG. Pasión por las cartas de colección.</p>
+        <div class="social-links">
+          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Síguenos en X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="https://discord.com" target="_blank" rel="noopener noreferrer" aria-label="Servidor de Discord de la comunidad"><i class="fa-brands fa-discord"></i></a>
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Galería en Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="Canal de YouTube"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Botón fijo inferior derecho (position: fixed) -->
+  <aside class="floating-widget">
+    <a href="#contacto" class="btn-floating" aria-label="Chat de soporte y consultas">
+      <i class="fa-solid fa-comments"></i>
+      <span class="tooltip-text">¿Dudas con tu formato?</span>
+    </a>
+  </aside>
+
+</body>
+</html>

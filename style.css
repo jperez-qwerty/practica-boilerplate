@@ -1,0 +1,327 @@
+/* ==========================================================================
+   1. RESET PROPIO COMPLEMENTARIO A NORMALIZE
+   ========================================================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ==========================================================================
+   2. VARIABLES GLOBALES (:ROOT)
+   ========================================================================== */
+:root {
+  /* Paleta cromática TCG */
+  --color-bg-page: #f4f5f7;
+  --color-bg-card: #ffffff;
+  --color-text-main: #12151a;
+  --color-text-muted: #687182;
+  --color-accent: #6366f1;         /* Índigo elegante */
+  --color-accent-hover: #4f46e5;   /* Tono más oscuro al interactuar */
+  --color-border: #e2e8f0;
+
+  /* Tipografía */
+  --font-base: 'Inter', sans-serif;
+
+  /* Unidades absolutas para macro-estructura */
+  --container-min-width: 1000px;
+  --container-max-width: 2000px;
+
+  /* Unidades relativas para componentes y espaciados */
+  --radius-sm: 0.5rem;
+  --radius-md: 0.85rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2.5rem;
+  --space-xl: 3.5rem;
+
+  /* Transición */
+  --transition-smooth: 0.25s ease;
+}
+
+/* ==========================================================================
+   3. CONTENEDOR MAESTRO (1000px a 2000px)
+   ========================================================================== */
+.site-container {
+  width: 100%;
+  min-width: var(--container-min-width);
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  background-color: var(--color-bg-card);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.05);
+}
+
+/* ==========================================================================
+   4. CABECERA Y MENÚ CON INTERACCIONES
+   ========================================================================== */
+.site-header {
+  position: sticky;
+  top: 0;
+  background-color: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid var(--color-border);
+  z-index: 100;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem var(--space-lg);
+}
+
+.brand-logo {
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--color-text-main);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  gap: 1rem;
+}
+
+/* Estilo de los botones del menú (tipo css3-menu-generator) */
+.nav-link {
+  text-decoration: none;
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-smooth);
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--color-accent);
+  background-color: rgba(0, 113, 227, 0.08);
+}
+
+/* ==========================================================================
+   5. CONTENEDOR CENTRAL: MAIN + ASIDE CON FLEXBOX
+   ========================================================================== */
+.content-wrapper {
+  display: flex;
+  flex: 1;
+  padding: var(--space-lg);
+  gap: var(--space-lg);
+}
+
+.site-main {
+  flex: 3;
+}
+
+.site-aside {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+/* Hero Section */
+.hero-section {
+  text-align: center;
+  padding: var(--space-xl) var(--space-md);
+  margin-bottom: var(--space-lg);
+  background-color: var(--color-bg-page);
+  border-radius: var(--radius-md);
+}
+
+.hero-section h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+}
+
+.hero-section p {
+  color: var(--color-text-muted);
+  font-size: 1.1rem;
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+/* Artículos repetidos (Tarjetas con Flexbox) */
+.products-grid {
+  display: flex;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.card {
+  flex: 1 1 280px;
+  background-color: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+}
+
+.card-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.card-body {
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.card-tag {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: 0.25rem;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.card-text {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-md);
+  flex: 1;
+}
+
+.card-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: var(--color-accent);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.card-btn:hover {
+  text-decoration: underline;
+}
+
+/* Widgets del Aside */
+.aside-widget {
+  background-color: var(--color-bg-page);
+  padding: var(--space-md);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+}
+
+.aside-widget h3 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.aside-widget p {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+/* ==========================================================================
+   6. PIE DE PÁGINA (FOOTER)
+   ========================================================================== */
+.site-footer {
+  border-top: 1px solid var(--color-border);
+  padding: var(--space-lg);
+  background-color: var(--color-bg-page);
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+.social-links {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.social-links a {
+  color: var(--color-text-muted);
+  font-size: 1.25rem;
+  transition: color var(--transition-smooth);
+}
+
+.social-links a:hover {
+  color: var(--color-accent);
+}
+
+/* ==========================================================================
+   7. ELEMENTO FIJO EN ESQUINA INFERIOR DERECHA (POSITION: FIXED)
+   ========================================================================== */
+.floating-widget {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 999;
+}
+
+.btn-floating {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 56px;
+  height: 56px;
+  background-color: var(--color-accent);
+  color: #ffffff;
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 1.4rem;
+  box-shadow: 0 6px 16px rgba(0, 113, 227, 0.35);
+  transition: transform var(--transition-smooth), background-color var(--transition-smooth);
+}
+
+.btn-floating:hover {
+  background-color: var(--color-accent-hover);
+  transform: scale(1.08);
+}
+
+.btn-floating .tooltip-text {
+  position: absolute;
+  right: 68px;
+  background-color: var(--color-text-main);
+  color: #ffffff;
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.8rem;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-smooth);
+}
+
+.btn-floating:hover .tooltip-text {
+  opacity: 1;
+}
